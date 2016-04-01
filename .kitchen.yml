@@ -1,0 +1,20 @@
+---
+driver:
+  name: 'vagrant'
+
+provisioner:
+  name: 'chef_zero'
+  attributes:
+    bug:
+      kitchen: true
+      remove_me: 123
+
+platforms:
+  - name: 'centos7'
+    driver:
+      box: 'bento/centos-7.2'
+  
+suites:
+  - name: 'default'
+    run_list:
+      - 'tkbug'
